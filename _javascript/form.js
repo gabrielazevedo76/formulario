@@ -1,3 +1,4 @@
+const forms = document.querySelector("#form")
 const names = document.querySelector("#name")
 const nickname = document.querySelector("#nickname")
 const day = document.querySelector("#day")
@@ -5,17 +6,18 @@ const month = document.querySelector("#month")
 const year = document.querySelector("#year")
 const cpf = document.querySelector("#cpf")
 const sports = document.querySelectorAll("[name='sport']")
-const submit = document.querySelector("#submit")
+const submitk = document.querySelector("#submit")
 const input = document.querySelectorAll("input")
 
 let validate, validateName, validadeNick, validadeDay, validadeMonth, validadeYear, validadeCpf, validadeCheck = false;
 
 let obj = []
 
-submit.addEventListener("click", (e) => {
+forms.addEventListener("submit", (e) => {
     e.preventDefault()
     returnJson()
     validation()
+    console.log("OI")
 })
 
 function returnJson() {
@@ -38,6 +40,7 @@ function returnJson() {
     for (let i = 0; i < obj.length; i++) {
         console.log(obj[i])
     }
+    return sportId
 }
 
 function validation() {
